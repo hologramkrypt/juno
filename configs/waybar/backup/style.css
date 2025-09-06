@@ -1,0 +1,100 @@
+/* Import color definitions */
+@import "./wallust/colors-waybar.css";
+
+/* Global font settings */
+* {
+    font-family: "JetBrainsMono Nerd Font, Material Design Icons Desktop, Font Awesome Icons Desktop, monospace, sans-serif";
+    font-weight: bold;
+    font-size: 16px;
+    color: @foreground;
+}
+
+/* Waybar window */
+window#waybar {
+    border-radius: 16px;
+    background: @background;
+    color: @foreground;
+}
+
+/* Tooltips */
+tooltip {
+    background: @background;
+    border-radius: 14px;
+    border: 1px solid @color8;
+}
+
+tooltip label {
+    color: @foreground;
+}
+
+/* Workspaces */
+#workspaces {
+    border-radius: 16px 24px 24px 16px;
+    margin: 0;
+    background-color: @background-alt;
+}
+
+#workspaces button {
+    min-width: 28px;
+    border-radius: 20px;
+    margin: 8px 0;
+    color: @foreground;
+}
+
+#workspaces button:not(:last-child) {
+    margin-right: 4px;
+}
+
+#workspaces button:hover {
+    background: @background-alt;
+}
+
+#workspaces button.active,
+#workspaces button.active:hover {
+    background: @color2;
+    color: @background;
+}
+
+/* Bar modules */
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#bluetooth,
+#temperature,
+#workspaces,
+#backlight {
+    padding: 0px 14px;
+    background-color: @background-alt;
+    color: @foreground;
+}
+
+#tray {
+    padding: 0px 16px;
+    color: @foreground;
+}
+
+#network {
+    border-radius: 24px 0 0 24px;
+    padding-left: 24px;
+}
+
+/* Battery and temperature status */
+#battery.warning { color: @color1; }
+#battery.critical { color: @color9; }
+#temperature.critical { color: @color9; }
+
+/* Clock styling */
+#clock {
+    padding-right: 16px;
+    border-radius: 0 16px 16px 0;
+}
+
+/* Cursor and selection */
+cursor { color: @cursor; }
+
+selection {
+    color: @background;
+    background: @background-alt;
+}
+
