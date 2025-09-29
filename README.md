@@ -4,9 +4,11 @@
 <h4 align=center>🚧THIS IS UNDER MAITENANCE 🚧</h4>
 
 <h1 align=center>Index</h1>
-
+<h4 align=center>
+	
 [🏠 JUNO](README.md) | [⚙️ Installation](github/INSTALL.md) | [🖼️ Assets](github/ASSETS.md) | [📝 To-Do](#to-do) | [📜 Attributions](#attributions)
-
+	
+</h4>
 ---
 
 This is a repo containing the **core files** for my daily driver laptop. I'm currently running *Fedora Workstation 42* with *Hyprland*, however this is subject to change. These are the main applications I use to create my desktop environment.
