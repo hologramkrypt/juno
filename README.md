@@ -5,7 +5,7 @@
 
 <h1 align=center>Index</h1>
 
-[🏠 JUNO](README.md) | [⚙️ Installation](github/INSTALL.md) | [🖼️ Assets](github/ASSETS.md) | [🔧 Configuration](github/INSTALL.md) | [📝 To-Do](#to-do) | [📜 Attributions](#attributions)
+[🏠 JUNO](README.md) | [⚙️ Installation](github/INSTALL.md) | [🖼️ Assets](github/ASSETS.md) | [📝 To-Do](#to-do) | [📜 Attributions](#attributions)
 
 ---
 
