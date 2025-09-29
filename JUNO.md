@@ -3,11 +3,15 @@
 
 <h4 align=center>🚧THIS IS UNDER MAITENANCE 🚧</h4>
 
+<h1 align=center>Index</h1>
+
+[🏠 JUNO](JUNO.md) | [⚙️ Installation](github/INSTALL.md) | [🖼️ Assets](github/ASSETS.md) | [🔧 Configuration](github/INSTALL.md) | [📝 To-Do](#to-do) | [📜 Attributions](#attributions)
+
 ---
 
-This is a repo containing the **core files** for my daily driver laptop. I'm currently running *Fedora Workstation 42* with *Hyprland*, however this is subject to change. These are the main applications I use to create my desktop enviorment.
+This is a repo containing the **core files** for my daily driver laptop. I'm currently running *Fedora Workstation 42* with *Hyprland*, however this is subject to change. These are the main applications I use to create my desktop environment.
 
----
+
 
 ### *INTRO*
 
@@ -53,24 +57,27 @@ cd juno
 
 ```
 
-##### Notes on configuring the system
+### Notes on configuring the system
 
-There are many
+I have provided in depth information for installing and configuring the system within [the Installation README](github/INSTALL.md). I have also provided alternatives, however substituting dependencies is highly discouraged. I would advise against changing much form the base repository structure.
+
+Information on what I use for my wallpapers, icons, etc can be found in the [assets README](github/ASSETS.md)
 
 ---
 
 ### *TO-DO*
 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] Installation walkthrough
+- [ ] Wallust integration throughout applications
+- [ ] Connectivity between programs
+- [ ] Theming
+- [ ] Github beautification
 
 ---
 
 ### *ATTRIBUTIONS*
 
-
+This build was inspired in part by [JaKooLit's Hyprland Dots](https://github.com/JaKooLit/Hyprland-Dots), which I found to be a very sturdy framework to build upon. I also would like to give credit to [ThePrimeagen](https://github.com/ThePrimeagen), who's Nvim config I largely based my own config on.
 
 
 [^1]: I try to make both of these systems work together as much as possible. For example, I use the same Nvim config on both.
