@@ -34,8 +34,8 @@ sudo dnf copr enable solopasha/hyprland
 | [wlogout]() | logout manager | [🧩](https://github.com/ArtsyMacaw/wlogout) |
 | [nwg-look]() | GTK theme manager | [🧩](https://nwg-piotr.github.io/nwg-shell/nwg-look.html) |
 
-<details>
-	<summary>Install command</summary>
+
+#### Install command
 
 - *dnf* install
 ```bash
@@ -67,8 +67,6 @@ sudo dnf install
 | [vifm]() | terminal based filebrowser | [🧩](https://vifm.info/) |
 | [mpv]() | alternative video player | [🧩](https://mpv.io/) |
 | [cmatrix]() | matrix terminal effect | [🧩](https://github.com/abishekvashok/cmatrix) |
-
----
 
 </details>
 
