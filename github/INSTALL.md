@@ -37,6 +37,9 @@ sudo dnf copr enable solopasha/hyprland
 
 #### Install command
 
+> **⚠️ Note:**  
+> Refer to program-specific files to apply my configurations. You can also install them yourself to configure to your liking.
+
 - *dnf* install
 ```bash
 
