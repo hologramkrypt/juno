@@ -1,0 +1,15 @@
+/* Ja KooLit - Global rofi fonts */
+
+/* This is where you can change fonts and sizes */
+
+
+/*****-- Fonts Size and Font Size -----*****/
+configuration {
+  font: "JetBrains Mono Bold 16";
+}
+
+
+/*****-- Elements Font Size -----*****/
+element-text {
+  font: "JetBrains Mono SemiBold 14";
+}
