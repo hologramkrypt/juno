@@ -1,0 +1,137 @@
+@theme "~/.config/rofi/themes/juno.rasi"
+@theme "~/.config/rofi/wallust/colors-rofi.rasi"
+
+configuration {
+    modi:                        "drun";
+    font:                        "Ndot55 14";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    hover-select:                true;
+    me-select-entry:             "MouseSecondary";
+    me-accept-entry:             "MousePrimary";
+    window-format:               "{w} · {c} · {t}";
+    dpi:                         2;
+}
+
+* {
+    background-alt:              @alternate-active-background; 
+    selected:                    @selected-normal-foreground;
+    active:                      @selected-urgent-foreground; 
+    urgent:                      @urgent-background;
+    text-selected:               @foreground;
+    text-color:                  @foreground;
+    border-color:                @selected-normal-background;
+}
+
+
+window {
+    enabled:                     true;
+    fullscreen:                  false;
+    transparency:                "real";
+    cursor:                      "default";
+    spacing:                     0px;
+    border-radius:               5px;
+    location:                    center;
+    anchor:                      center;
+    width:                       70%;
+    background-color:            rgba(0,0,0,0.3);
+    border:                      2px;
+    border-color:                rgba(0,0,0,0.2);
+}
+
+mainbox {
+    enabled:                     true;
+    children:                    [  "listview"  ];
+    background-color:            transparent;
+}
+
+inputbar {
+    enabled:                      false;
+    text-color:                   @text-color;
+    background-color:             transparent;
+    padding:                      5px;
+    margin:                       10px;
+    children:                     [ "entry" ];
+}
+
+entry {
+    enabled:                      true;
+    placeholder:                  " ";
+    padding:                      0px 380px 0px 380px;
+    text-color:                   inherit;
+    background-color:             transparent;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     5; 
+    lines:                       3; 
+    padding:                     26px 36px;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    background-color:            transparent;
+    spacing:                     15px;
+
+    border:                      0px;
+}
+
+element {
+    enabled:                     true;
+    orientation:                 vertical;
+    expand:                      false;
+    spacing:                     0px;
+    padding:                     5px 10px;
+    border-radius:               5px;
+    cursor:                      pointer;
+    background-color:            #00000000;
+}
+
+element normal.normal {
+    background-color:            #00000033;
+    text-color:                  inherit;
+}
+element normal.urgent {
+    background-color:            #00000000;
+    text-color:                  @foreground;
+}
+element normal.active {
+    background-color:            #00000000;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    background-color:            @selected-urgent-background;
+    text-color:                  @text-selected;
+}
+element alternate.normal {
+    background-color:            #00000033;
+    text-color:                  inherit;
+}
+element alternate.urgent {
+    background-color:            #00000000;
+    text-color:                  inherit;
+}
+element alternate.active {
+    background-color:            #00000000;
+    text-color:                  inherit;
+}
+
+element-icon {
+    size:                        50%;
+    cursor:                      inherit;
+    expand:                      false;
+    padding:                     0px;
+    background-color:            #00000000;
+}
+
+element-text {
+    cursor:                      inherit;
+    background-color:            transparent;
+    padding-left:                10px; 
+}
