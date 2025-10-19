@@ -2,13 +2,13 @@
 
 ### <div align="center">🚧 THIS IS UNDER MAINTENANCE 🚧</div>
 
-## <div align="center">Index</div>
-
 This repository contains the **core files** for my daily driver laptop.  
 Currently running *Fedora Workstation 42* with *Hyprland* — subject to change.  
 These are the main applications I use to create my desktop environment.
 
 ---
+
+## <div align="center">Index</div>
 
 <div align="center">
 
