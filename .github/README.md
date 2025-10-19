@@ -2,8 +2,6 @@
 
 ### <div align="center">🚧 THIS IS UNDER MAINTENANCE 🚧</div>
 
----
-
 ## <div align="center">Index</div>
 
 <div align="center">
