@@ -77,7 +77,7 @@ Inspired in part by [JaKooLit's Hyprland Dots](https://github.com/JaKooLit/Hyprl
 Thanks also to [ThePrimeagen](https://github.com/ThePrimeagen) for Nvim configuration inspiration.
 
 <p align="center">
-    Built in the graveyard // <strong>hologramkrypt</strong> \\ |  saturni
+    Built in the graveyard // <strong>hologramkrypt</strong> \\ |  juno
 </p>
 
 [^1]: Both systems share configurations (e.g., same Nvim setup) for cross-device parity.
