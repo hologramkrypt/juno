@@ -79,3 +79,8 @@ Thanks also to [ThePrimeagen](https://github.com/ThePrimeagen) for Nvim configur
 ---
 
 [^1]: Both systems share configurations (e.g., same Nvim setup) for cross-device parity.
+
+
+<p align="center">
+    Built in the graveyard // <strong>hologramkrypt</strong> \\ |  saturni
+</p>
