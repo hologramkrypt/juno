@@ -12,7 +12,7 @@ These are the main applications I use to create my desktop environment.
 
 <div align="center">
 
-[⚙️ Installation](.github/INSTALL.md) • [🖼️ Assets](.github/ASSETS.md) • [📝 To-Do](#to-do) • [📜 Attributions](#attributions)
+[⚙️ Installation](INSTALL.md) • [🖼️ Assets](ASSETS.md) • [📝 To-Do](#to-do) • [📜 Attributions](#attributions)
 
 </div>
 
