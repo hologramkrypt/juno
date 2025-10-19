@@ -55,9 +55,9 @@ Everything here is configured for my **ASUS ZenBook**. Specifics below.
     cd juno
 
 **Configuration notes:**  
-Detailed setup instructions are in [Installation README](github/INSTALL.md).  
+Detailed setup instructions are in [Installation README](INSTALLATION.md).  
 Avoid substituting dependencies; the base repo structure is intentional.  
-Info on wallpapers, icons, etc. is in [Assets README](github/ASSETS.md).
+Info on wallpapers, icons, etc. is in [Assets README](ASSETS.md).
 
 ---
 
