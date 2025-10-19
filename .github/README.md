@@ -8,7 +8,7 @@
 
 <div align="center">
 
-[🏠 JUNO](README.md) • [⚙️ Installation](github/INSTALL.md) • [🖼️ Assets](github/ASSETS.md) • [📝 To-Do](#to-do) • [📜 Attributions](#attributions)
+[⚙️ Installation](github/INSTALL.md) • [🖼️ Assets](github/ASSETS.md) • [📝 To-Do](#to-do) • [📜 Attributions](#attributions)
 
 </div>
 
