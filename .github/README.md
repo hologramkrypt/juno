@@ -4,12 +4,6 @@
 
 ## <div align="center">Index</div>
 
-<div align="center">
-
-[⚙️ Installation](github/INSTALL.md) • [🖼️ Assets](github/ASSETS.md) • [📝 To-Do](#to-do) • [📜 Attributions](#attributions)
-
-</div>
-
 ---
 
 This repository contains the **core files** for my daily driver laptop.  
@@ -17,6 +11,12 @@ Currently running *Fedora Workstation 42* with *Hyprland* — subject to change.
 These are the main applications I use to create my desktop environment.
 
 ---
+
+<div align="center">
+
+[⚙️ Installation](github/INSTALL.md) • [🖼️ Assets](github/ASSETS.md) • [📝 To-Do](#to-do) • [📜 Attributions](#attributions)
+
+</div>
 
 ### *Intro*
 
