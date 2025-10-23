@@ -1,0 +1,12 @@
+# This is the configuration file for Ghostty.
+
+theme = Vague
+
+font-family = Hack
+font-size = 14.0
+
+window-padding-x = 20
+window-padding-y = 20
+
+background-opacity = 0.5
+background-blur = 4
