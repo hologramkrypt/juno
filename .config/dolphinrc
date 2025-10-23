@@ -1,0 +1,45 @@
+MenuBar=Disabled
+
+[CompactMode]
+PreviewSize=22
+
+[ContextMenu]
+ShowMoveToOtherSplitView=false
+
+[DetailsMode]
+PreviewSize=32
+
+[General]
+OpenNewTabAfterLastTab=true
+RememberOpenedTabs=false
+ShowFullPathInTitlebar=true
+ShowStatusBar=FullWidth
+UseTabForSwitchingSplitView=true
+Version=202
+ViewPropsTimestamp=2025,10,6,6,37,37.209
+
+[IconsMode]
+IconSize=16
+MaximumTextLines=3
+PreviewSize=32
+TextWidthIndex=0
+
+[InformationPanel]
+dateFormat=ShortFormat
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=16
+
+[MainWindow]
+MenuBar=Disabled
+
+[PlacesPanel]
+IconSize=16
+Width=800
+
+[PreviewSettings]
+Plugins=audiothumbnail,avif,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,gsf-office,opendocumentthumbnail,gdk-pixbuf-thumbnailer,librsvg,svgthumbnail,ffmpegthumbs
+
+[ViewPropertiesDialog]
+1083x609 screen: Window-Maximized=true
