@@ -9,8 +9,8 @@ ROFI_THEME="$HOME/.config/rofi/config-wallpaper.rasi"
 WALLPAPER_CURRENT="$HOME/.config/hypr/configs/appearance/wallpaper_effects/.wallpaper_current"
 
 # Thumbnail dimensions (matches rofi element size)
-THUMB_WIDTH=180
-THUMB_HEIGHT=112
+THUMB_WIDTH=220
+THUMB_HEIGHT=240
 
 # Create cache directory
 mkdir -p "$CACHE_DIR"
