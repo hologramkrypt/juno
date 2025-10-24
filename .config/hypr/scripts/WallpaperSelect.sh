@@ -1,5 +1,5 @@
 #!/bin/bash
-# Wallpaper Selector - Hide Filenames, Show Only Folders
+# Wallpaper Selector - Unique Thumbnails for Same Filenames
 
 # Configuration
 WALLPAPER_DIR="$HOME/.wallpapers"
@@ -9,8 +9,8 @@ ROFI_THEME="$HOME/.config/rofi/config-wallpaper.rasi"
 WALLPAPER_CURRENT="$HOME/.config/hypr/configs/appearance/wallpaper_effects/.wallpaper_current"
 
 # Thumbnail dimensions (matches rofi element size)
-THUMB_WIDTH=200
-THUMB_HEIGHT=230
+THUMB_WIDTH=180
+THUMB_HEIGHT=112
 
 # Create cache directory
 mkdir -p "$CACHE_DIR"
@@ -104,14 +104,14 @@ create_thumbnail() {
     fi
 }
 
-# Generate menu content - HIDE FILENAMES, SHOW ONLY FOLDERS
+# Generate menu content with folder context
 generate_menu() {
     local dir="$1"
     
     # Add back button if not in root
     [[ "$dir" != "$WALLPAPER_DIR" ]] && printf "%s\x00icon\x1f%s\n" ".. (back)" "go-previous"
 
-    # Add folders WITH VISIBLE TEXT
+    # Add folders
     while IFS= read -r -d '' d; do
         folder_name="$(basename "$d")"
         printf "%s/\x00icon\x1ffolder\n" "$folder_name"
@@ -121,19 +121,18 @@ generate_menu() {
     collect_wallpapers "$dir"
     [[ ${#PICS[@]} -gt 0 ]] || return
 
-    # Add random option WITH VISIBLE TEXT
+    # Add random option
     printf "%s\x00icon\x1f%s\n" ". random" "media-playlist-shuffle"
 
-    # Add wallpapers WITH HIDDEN TEXT (empty display name)
+    # Add wallpapers with unique thumbnails
     for pic_path in "${PICS[@]}"; do
         name=$(basename "$pic_path")
         thumb=$(create_thumbnail "$pic_path")
         
         if [[ -f "$thumb" ]]; then
-            # Use empty string for display text to hide filename
-            printf "\x00icon\x1f%s\x00info\x1f%s\n" "$thumb" "$name"
+            printf "%s\x00icon\x1f%s\n" "$name" "$thumb"
         else
-            printf "\x00icon\x1fimage-x-generic\x00info\x1f%s\n" "$name"
+            printf "%s\x00icon\x1fimage-x-generic\n" "$name"
         fi
     done
 }
@@ -143,14 +142,10 @@ navigate_and_select() {
     local dir="$WALLPAPER_DIR"
     
     while true; do
-        # Get current directory display name
-        local current_dir_display="${dir#$WALLPAPER_DIR/}"
-        [[ -z "$current_dir_display" ]] && current_dir_display="/"
-        
-        choice=$(generate_menu "$dir" | rofi -dmenu -show -i -theme "$ROFI_THEME" -p "Wallpapers: $current_dir_display" | sed 's/\x00.*//')
+        choice=$(generate_menu "$dir" | rofi -dmenu -show -i -theme "$ROFI_THEME" -p "Wallpapers: ${current_dir#$WALLPAPER_DIR/}" | sed 's/\x00.*//')
         [[ -z "$choice" ]] && return 1
 
-        echo "SELECTED: '$choice'" >&2
+        echo "SELECTED: $choice" >&2
 
         case "$choice" in
             ".. (back)")
@@ -169,14 +164,8 @@ navigate_and_select() {
                 new_dir="$dir/${choice%/}"
                 [[ -d "$new_dir" ]] && dir="$new_dir"
                 ;;
-            "")
-                # Empty selection (hidden wallpaper) - we need to get the actual filename from info
-                # This requires a different approach since we hid the text
-                # For now, we'll handle this in the main loop by using the full menu processing
-                notify-send "Error" "Please use folder navigation to select wallpapers"
-                ;;
             *)
-                # File selection (shouldn't happen since we hid filenames)
+                # File selection
                 file_path="$dir/$choice"
                 if [[ -f "$file_path" ]]; then
                     echo "$file_path"
@@ -213,10 +202,12 @@ apply_image_wallpaper() {
     
     notify-send "Wallpaper" "Applied: $(basename "$image_path")"
 }
-
 # Main function
 main() {
     pkill rofi 2>/dev/null
+    
+    # Optional: clean up old thumbnails (uncomment if needed)
+    # cleanup_old_thumbnails
     
     local selected_file
     selected_file=$(navigate_and_select)
