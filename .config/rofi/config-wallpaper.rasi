@@ -8,6 +8,17 @@ configuration {
     dpi: 1;
 }
 
+* {
+    background:                  transparent;
+    background-alt:              @alternate-active-background;
+    selected:                    @selected-normal-foreground;
+    active:                      @selected-urgent-foreground;
+    urgent:                      @urgent-background;
+    text-selected:               @foreground;
+    text-color:                  @foreground;
+    border-color:                @selected-normal-background;
+}
+
 window {
     background-color: @background;
     border: 2px;
@@ -75,7 +86,7 @@ element-text {
     horizontal-align: 0.5;
     wrap: true;
     max-width: 190px;
-    color: @foreground;
+    color: @text-color;
 }
 
 inputbar {
