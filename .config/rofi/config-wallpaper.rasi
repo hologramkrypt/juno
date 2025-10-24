@@ -1,137 +1,87 @@
-@theme "~/.config/rofi/themes/juno.rasi"
-@theme "~/.config/rofi/wallust/colors-rofi.rasi"
+@import "~/.config/rofi/wallust/colors-rofi.rasi"
 
 configuration {
-    modi:                        "drun";
-    font:                        "Ndot55 14";
-    show-icons:                  true;
-    drun-display-format:         "{name}";
-    hover-select:                true;
-    me-select-entry:             "MouseSecondary";
-    me-accept-entry:             "MousePrimary";
-    window-format:               "{w} · {c} · {t}";
-    dpi:                         2;
+    show-icons: true;
+    hover-select: true;
+    me-select-entry: "MouseSecondary";
+    me-accept-entry: "MousePrimary";
+    dpi: 1;
 }
-
-* {
-    background-alt:              @alternate-active-background; 
-    selected:                    @selected-normal-foreground;
-    active:                      @selected-urgent-foreground; 
-    urgent:                      @urgent-background;
-    text-selected:               @foreground;
-    text-color:                  @foreground;
-    border-color:                @selected-normal-background;
-}
-
 
 window {
-    enabled:                     true;
-    fullscreen:                  false;
-    transparency:                "real";
-    cursor:                      "default";
-    spacing:                     0px;
-    border-radius:               5px;
-    location:                    center;
-    anchor:                      center;
-    width:                       70%;
-    background-color:            rgba(0,0,0,0.3);
-    border:                      2px;
-    border-color:                rgba(0,0,0,0.2);
+    background-color: @background;
+    border: 2px;
+    border-color: @border-color;
+    border-radius: 12px;
+    width: 90%;
+    height: inherit;
+    location: center;
+    anchor: center;
+    padding: 15px;
 }
 
 mainbox {
-    enabled:                     true;
-    children:                    [  "listview"  ];
-    background-color:            transparent;
-}
-
-inputbar {
-    enabled:                      false;
-    text-color:                   @text-color;
-    background-color:             transparent;
-    padding:                      5px;
-    margin:                       10px;
-    children:                     [ "entry" ];
-}
-
-entry {
-    enabled:                      true;
-    placeholder:                  " ";
-    padding:                      0px 380px 0px 380px;
-    text-color:                   inherit;
-    background-color:             transparent;
+    children: [ "listview" ];
+    background-color: transparent;
+    spacing: 2px;
 }
 
 listview {
-    enabled:                     true;
-    columns:                     5; 
-    lines:                       3; 
-    padding:                     26px 36px;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-
-    background-color:            transparent;
-    spacing:                     15px;
-
-    border:                      0px;
+    columns: 7; 
+    lines: 1;  
+    dynamic: true;
+    scrollbar: true;
+    layout: vertical;
+    spacing: 15px;
+    padding: 10px;
+    background-color: transparent;
 }
 
 element {
-    enabled:                     true;
-    orientation:                 vertical;
-    expand:                      false;
-    spacing:                     0px;
-    padding:                     5px 10px;
-    border-radius:               5px;
-    cursor:                      pointer;
-    background-color:            #00000000;
+    orientation: vertical;
+    spacing: 2px;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: transparent; 
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
 }
 
 element normal.normal {
-    background-color:            #00000033;
-    text-color:                  inherit;
-}
-element normal.urgent {
-    background-color:            #00000000;
-    text-color:                  @foreground;
-}
-element normal.active {
-    background-color:            #00000000;
-    text-color:                  @foreground;
+    background-color: transparent;
+    text-color: @foreground;
 }
 
 element selected.normal {
-    background-color:            @selected-urgent-background;
-    text-color:                  @text-selected;
-}
-element alternate.normal {
-    background-color:            #00000033;
-    text-color:                  inherit;
-}
-element alternate.urgent {
-    background-color:            #00000000;
-    text-color:                  inherit;
-}
-element alternate.active {
-    background-color:            #00000000;
-    text-color:                  inherit;
+    background-color: @selected-normal-background;
+    text-color: @selected-normal-foreground;
+    border: 2px;
+    border-color: @border-color;
 }
 
 element-icon {
-    size:                        50%;
-    cursor:                      inherit;
-    expand:                      false;
-    padding:                     0px;
-    background-color:            #00000000;
+    size: 200px; 
+    border-radius: 6px;
+    horizontal-align: 0.5;
+    background-color: transparent;
 }
 
 element-text {
-    cursor:                      inherit;
-    background-color:            transparent;
-    padding-left:                10px; 
+    text-align: center;
+    font-size: 11px;
+    vertical-align: 0.5;
+    background-color: transparent;
+    horizontal-align: 0.5;
+    wrap: true;
+    max-width: 190px;
+    color: @foreground;
+}
+
+inputbar {
+    enabled: false;
+}
+
+message {
+    enabled: false;
 }
