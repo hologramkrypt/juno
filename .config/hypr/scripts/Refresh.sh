@@ -1,36 +1,51 @@
 #!/bin/bash
-# Refresh Hyprland UI components
+# Refresh Hyprland UI components without resetting wallpaper
 
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
-UserScripts="$HOME/.config/hypr/scripts"
+WALLPAPER_EFFECTS="$HOME/.config/hypr/configs/appearance/wallpaper_effects/.wallpaper_current"
 
-# List of processes to kill
-_procs=(waybar rofi swaync swaybg ags qs)
+# List of processes to kill - REMOVED hyprpaper from this list
+_procs=(waybar rofi swaync ags qs)
 
+# Kill processes in parallel
 for p in "${_procs[@]}"; do
-    pkill -x "$p" 2>/dev/null
-    # Wait for processes to terminate
-    while pidof -x "$p" >/dev/null; do
-        sleep 0.5
+    pkill -x "$p" 2>/dev/null &
+done
+wait
+
+# Wait for processes to terminate with timeout
+for p in "${_procs[@]}"; do
+    timeout=10
+    while pgrep -x "$p" >/dev/null && [ $timeout -gt 0 ]; do
+        sleep 0.1
+        ((timeout--))
     done
+    if pgrep -x "$p" >/dev/null; then
+        pkill -9 -x "$p" 2>/dev/null
+    fi
 done
 
-# Small delay to ensure cleanup
-sleep 0.5
+# Run wallust to update colors
+if [[ -f "$WALLPAPER_EFFECTS" ]]; then
+    wallust run "$WALLPAPER_EFFECTS"
+fi
 
-# Run wallust once
-wallust run $HOME/.config/hypr/configs/appearance/wallpaper_effects/.wallpaper_current
-notify-send --replace-id=1 "System refreshed"
+# Reload hyprpaper WITHOUT killing it first
+hyprpaper &
+swaync-client --reload-config &
 
-# Relaunch services (background)
+# Relaunch other services
 ags &
 qs &
 swaync > /dev/null 2>&1 &
-swaync-client --reload-config
-hyprctl reload &
 
-# Start waybar only if not already running
+# Start waybar only if not running
 sleep 0.5
-if ! pidof -x waybar >/dev/null; then
+if ! pgrep -x waybar >/dev/null; then
     waybar &
 fi
+
+# Final notifications
+sleep 1
+notify-send --replace-id=1 "System refreshed"
+hyprctl reload &
