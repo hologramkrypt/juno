@@ -72,6 +72,10 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+# SSH Key for performing git operations within terminal
+eval $(keychain --eval --quiet ~/.ssh/gitkey)
+
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
